@@ -1,7 +1,7 @@
 
 
 
-#' randomDNAseq
+#' randomDNASeq
 #'
 #' @param seqLength a number
 #'
@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-randomDNAseq <- function(seqLength){
+randomDNASeq <- function(seqLength){
   sampleDNAList <- sample(c("A", "T", "G", "C"), size = seqLength, replace = TRUE)
   sampleDNAStr <- paste0(sampleDNAList, collapse = "")
   return(sampleDNAStr)

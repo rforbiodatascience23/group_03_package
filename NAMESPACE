@@ -3,7 +3,7 @@
 export(codonsToAA)
 export(dnaToRna)
 export(plotFreqAA)
-export(randomDNAseq)
+export(randomDNASeq)
 export(seqToCodon)
 importFrom(ggplot2,aes)
 importFrom(ggplot2,geom_col)

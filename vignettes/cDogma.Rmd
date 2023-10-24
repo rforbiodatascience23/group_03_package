@@ -1,0 +1,76 @@
+---
+title: "cDogma"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{cDogma}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# cDogma Vignette
+
+## Description
+
+The central_dogma package provides functions that enables you to generate and convert a DNA sequence into RNA and further into an amino acid sequence, thus following the central dogma. The distribution of amino acids of the final amino acid sequence can be visualized in a bar plot.
+
+The package includes five functions:
+
+- randomDNASeq
+- dnaToRna
+- seqToCodon
+- codonsToAA
+- plotFreqAA
+
+### randomDNASeq
+
+The randomDNAseq() function takes an input of an integer of choice and returns a random DNA sequence of the given input length. In the code below, a 20 bp long sequences is created.
+
+```{r}
+set.seed(111)
+randomDNASeq(20)
+```
+
+### dnaToRna
+
+The function dnaToRNA converts a DNA sequence (given as a string) to a RNA transcript. In can be used in combination with randomDNAseq as seen in the following example:
+
+```{r}
+# Generate DNA sequence with 50 bp:
+DNASeq <- randomDNASeq(50)
+DNASeq
+# Convert the sequence to a RNA sequence:
+RNASeq <- dnaToRna(DNASeq)
+RNASeq
+```
+
+### seqToCodon
+
+The function seqToCodon returns codons from input sequence. Furthermore, we can decide the start position, hereby also defining the reading frame. Let's try the function out using the RNA sequence from previous example starting a position 4:
+
+```{r}
+codons <- seqToCodon(RNASeq, 4)
+codons
+```
+
+### codonsToAA
+
+It is also possible to translate a RNA sequence into the corresponding amino acid sequence with codonsToAA. This function take as input a vector of codons as the one generated before.
+
+```{r}
+proteinSeq <- codonsToAA(codons)
+proteinSeq
+```
+
+As seen from before, we find a "_" in the sequence. This is the encoding for the stop codons seen from codonTable:
+
+```{r}
+codonTable
+```
+
+### plotFreqAA
+
+The function plotFreqAA will plot the amount of amino acids found in a given protein sequence given as input to the function as a string. Here is an example: 
+
+```{r}
+plotFreqAA(proteinSeq)
+```
