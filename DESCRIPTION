@@ -1,0 +1,22 @@
+Package: cDogma
+Type: Package
+Title: Central dogma of molecular biology
+Version: 0.1.0
+Authors@R:
+  c(person(given = "Rebecca",
+           family = "Grenov",
+           role = "aut", 
+           email = "kibecco@live.dk"), 
+    person(given = "Helene",
+           family = "Petersen",
+           role = "aut",
+           email = "s194699@student.dtu.dk")
+    person(given = "Johanne",
+           family = "Overgaard",
+           role = c("aut", "cre"),
+           email = "jobao@dtu.dk"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Converts DNA to RNA (and virce versa) translated to protein sequences.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
