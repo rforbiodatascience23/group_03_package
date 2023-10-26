@@ -1,25 +1,58 @@
 ---
-title: "cDogma"
-output: rmarkdown::pdf_document
-vignette: >
-  %\VignetteIndexEntry{cDogma}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: github_document
 ---
 
-GitHub repository: https://github.com/rforbiodatascience23/group_03_package
-
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
 
-```{r setup}
-library(cDogma)
+# cDogma
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of cDogma is to ...
+
+## Installation
+
+You can install the development version of cDogma from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("rforbiodatascience23/group_03_package")
 ```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(cDogma)
+## basic example code
+```
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
 
 ## Description
 
@@ -57,7 +90,7 @@ RNASeq
 
 ### seqToCodon
 
-The function seqToCodon returns codons from input sequence. Furthermore, we can decide the start position, hereby also defining the reading frame. Let's try the function out using the RNA sequence from previous example starting at position 4:
+The function seqToCodon returns codons from input sequence. Furthermore, we can decide the start position, hereby also defining the reading frame. Let's try the function out using the RNA sequence from previous example starting a position 4:
 
 ```{r}
 codons <- seqToCodon(RNASeq, 4)
